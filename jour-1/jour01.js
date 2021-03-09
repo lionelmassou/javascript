@@ -1,66 +1,61 @@
-// // JOUR 1
+// JOUR 1
 
-// // 01 HELLO WORD //
+// 01 HELLO WORD //
 
-// console.log("Hello World !");
+console.log("Hello World !");
 
-// // 02 STRING
+// 02 STRING
 
-// var test = "My name is Massou Lionel";
-// console.log(test);
+var test = "My name is Massou Lionel";
+console.log(test);
 
-// // 03 CONCATENATION
+// 03 CONCATENATION
 
-// var name = "Massou"
-// console.log("Nice to meet you" + " " + name);
-// console.log(`Nice to meet you ${name}` );
+var name = "Massou"
+console.log("Nice to meet you" + " " + name);
+console.log(`Nice to meet you ${name}` );
 
-// // 04 STRING LENGTH
+// 04 STRING LENGTH
 
-// var testLength = "i'm very long !";
-// console.log(testLength.length);
+var testLength = "i'm very long !";
+console.log(testLength.length);
 
-// // 05 REPLACE
+// 05 REPLACE
 
-// var food = "croissant is meh";
-// food = food.replace("meh","so good");
-// console.log(food);
+var food = "croissant is meh";
+food = food.replace("meh","so good");
+console.log(food);
 
-// // 06 UP AND DOWN
+// 06 UP AND DOWN
 
-// var basic = "This is Cool";
-// var basicUp = basic.toUpperCase();
-// var basicDown = basic.toLowerCase();
+var basic = "This is Cool";
+var basicUp = basic.toUpperCase();
+var basicDown = basic.toLowerCase();
 
-// console.log(basic, basicDown, basicUp);
+console.log(basic, basicDown, basicUp);
 
-// // 07 SPLIT
+// 07 SPLIT
 
-// var word = "banana"
-// var letters = word.split("");
-// console.log(letters);
+var word = "banana"
+var letters = word.split("");
+console.log(letters);
 
-// // 08 TEMPLATE
+// 08 TEMPLATE
 
-// var age = "31";
-// var template = "i'm " +age +" years old";
-// var template1 = `i'm ${age} years old`;
-// console.log(template);
-// console.log(template1);
+var age = "31";
+var template = "i'm " +age +" years old";
+var template1 = `i'm ${age} years old`;
+console.log(template);
+console.log(template1);
 
-// // BONUS
+// BONUS
 
-// // version qui fonctionne ponctuellement
-// // changed1 = changed.replace("o","a");
-// // changed2 = changed1.replace("o","a");
-// // console.log(changed2);
+// version qui fonctionne ponctuellement
+// changed1 = changed.replace("o","a");
+// changed2 = changed1.replace("o","a");
+// console.log(changed2);
 
-// //version qui fonctionne tout le temps
-//  var changed = "Bonjiourno";
-// changed = changed.replace(/o/g, 'a');
-// console.log(changed);
-
-// // TEST
-
-var testing = "hello world !"
-testing = testing.fromCharCode()
+//version qui fonctionne tout le temps
+ var changed = "Bonjiourno";
+changed = changed.replace(/o/g, 'a');
+console.log(changed);
