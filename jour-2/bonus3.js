@@ -6,7 +6,7 @@ var roundedNumber = 3.6;
 
 console.log("valeur à obtenir TEST1: " + Math.round(roundedNumber));
 
-if (Math.ceil(roundedNumber)-roundedNumber < 0.5 && (Math.floor(roundedNumber))-roundedNumber <= 0) {
+if (Math.ceil(roundedNumber)-roundedNumber < 0.5) {
     console.log("résultat1: " + Math.ceil(roundedNumber));
 } else {
     console.log("résultat1: " + Math.floor(roundedNumber));
@@ -43,4 +43,17 @@ if (Math.ceil(roundedNumber)-roundedNumber < 0.5 && (Math.floor(roundedNumber))-
     console.log("résultat4: " + Math.ceil(roundedNumber));
 } else {
     console.log("résultat4: " + Math.floor(roundedNumber));
+}
+
+// METHODE CHAINE DE CHARACTER
+
+var roundedNumber = 3.3;
+console.log("valeur à obtenir TEST1: " + Math.round(roundedNumber));
+
+var roundedString = roundedNumber.toString()
+
+// console.log(roundedString.charAt(2)+1);
+
+if (roundedString.charAt(2)>="0.5") {
+    console.log("résultat1bis: " + (roundedString.charAt(0)+1));
 }
