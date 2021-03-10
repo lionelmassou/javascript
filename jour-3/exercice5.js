@@ -1,0 +1,11 @@
+// BOUCLE
+
+var total = 0;
+var limit = 10;
+
+for (var i = 0; i<=limit; i++){
+    total = total+i;
+    // console.log("valeur intermediaire de total: " + total);
+}
+console.log("valeur finale de total: " + total);
+
