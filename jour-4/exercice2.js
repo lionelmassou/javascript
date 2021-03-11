@@ -13,4 +13,10 @@ var cat2 = {
     // hobby: ["football", "videos games", "coding"],
 }
 
-var cats 
+var cats = [cat, cat2];
+console.log(cats);
+// console.table(cats);
+
+console.log("valeur de age de cat est: ", cat.age);
+
+console.log("valeur de isCute de cat2 est: ", cat2.isCute);
