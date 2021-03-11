@@ -2,35 +2,45 @@
 
 function format(num) {
 
-    var heures = 0;
-    var minutes = 0;
-    var secondes = 0;
 
-    if (num > 3600) {
-        minutes = num % 3600;
-        heures = Math.floor(num / 3600);
-        if (minutes > 60) {
-            secondes = minutes % 60;
-            minutes = Math.floor(minutes / 60);
-            console.log(heures, " : ", minutes, " : ", secondes)
 
-        } else {
-            console.log(heures, " : ", minutes, " : ", secondes)
-        }
-    } else if (num <= 3600) {
-        secondes = minutes % 60;
-        minutes = Math.floor(minutes / 60);
-        console.log(heures, " : ", minutes, " : ", secondes)
+    var heures = (num - (num % 3600))/3600;
+    var minutes = ((num % 3600)-(num % 3600)%60)/60;
+    var secondes = (num % 3600) % 60;
 
-    } else {
-        console.log(heures, " : ", minutes, " : ", secondes)
-    }
+    var horaire = heures + ":" + minutes + ":" + secondes;
+    return horaire;
 
-    // console.log(heures, " : ", minutes, " : ", secondes)
+
 }
+// 1ere tentative T-T
 
-format(3700);
-format(60);
-format(3600);
-format(1);
-format(500);
+    // if (num > 3600) {
+    //     minutes = num % 3600;
+    //     heures = Math.floor(num / 3600);
+    //     if (minutes > 60) {
+    //         secondes = minutes % 60;
+    //         minutes = Math.floor(minutes / 60);
+    //         console.log(heures, " : ", minutes, " : ", secondes)
+
+    //     } else {
+    //         secondes = minutes % 60;
+    //         minutes = Math.floor(minutes / 60);
+    //         console.log(heures, " : ", minutes, " : ", secondes)
+    //     }
+    // } else if (num <= 3600) {
+    //     secondes = minutes % 60;
+    //     minutes = Math.floor(minutes / 60);
+    //     console.log(heures, " : ", minutes, " : ", secondes)
+
+    // } else {
+    //     secondes = minutes % 60;
+    //     minutes = Math.floor(minutes / 60);
+    //     console.log(heures, " : ", minutes, " : ", secondes)
+    // }
+
+
+console.log(format(3700));
+console.log(format(3600));
+console.log(format(300));
+console.log(format(61));
