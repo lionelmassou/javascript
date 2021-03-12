@@ -3,10 +3,6 @@
 var numbers = [];
 var min = 50;
 var max = 200;
-var tmp = 0;
-// var valeur;
-// var valMax = 0;
-// var numMax;
 
 
 for (var i = 1; i <= 50; i++) {
@@ -14,6 +10,15 @@ for (var i = 1; i <= 50; i++) {
     numbers.push(valeur);
 }
 
-while (){
+var j = numbers.length;
+var tmp = 0;
 
+while (j--) {
+    if (numbers[j] > 75 && numbers[j] <= 100){
+        tmp = numbers[j];
+    }
 }
+
+
+console.log(numbers);
+console.log(tmp)
