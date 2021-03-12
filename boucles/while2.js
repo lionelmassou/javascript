@@ -2,10 +2,12 @@
 
 var dice = null;
 var count = 0;
-// var resultDice = Math.floor(Math.random()*7);
+var min = 1;
+var max = 6;
+
 
 while (dice !== 6) {
-    dice = Math.floor(Math.random()*7);
+    dice = Math.floor(Math.random()*(max - min +1) + min);
     count = count +1;
     console.log("valeur de dice dans la boucle: ", dice);
 }
