@@ -9,4 +9,4 @@ function sortLetters (str) {
     // console.log(tab);
 }
 
-console.log(sortLetters("Konexio"));
+console.log(sortLetters("konexio"));

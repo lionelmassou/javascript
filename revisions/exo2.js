@@ -32,7 +32,7 @@ function countEach(str) {
 }
 
 // countEach("xoox");
-// countEach("xox");
-countEach("xoooxx");
+countEach("xox");
+// countEach("xoooxx");
 
 
