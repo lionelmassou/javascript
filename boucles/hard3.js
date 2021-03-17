@@ -10,7 +10,7 @@ for (var i = 1; i <= 50; i++) {
     numbers.push(valeur);
 }
 
-var j = numbers.length;
+var j = numbers.length-1;
 var tmp = 0;
 
 while (j--) {
