@@ -1,13 +1,16 @@
 // CALCULATOR
 
 function calculate(num1, num2, parm) {
-    if (parm === "+") return num1 + num2;
+    if (isNaN(num1) || isNaN(num2) || parm === undefined) return "Mettez bien les 3 paramètres svp: 2 entiers et 1 opérateur"
+    else if (parm === "+") return num1 + num2;
     else if (parm === "*") return num1 * num2;
     else if (parm === "/") return num1 / num2;
     else if (parm === "-") return num1 - num2;
     else if (parm === "%") return num1 % num2;
-    else console.log("error");
+
 }
+
+
 
 firstnum1 = parseInt(process.argv[2])
 secondnum2 = parseInt(process.argv[3])
