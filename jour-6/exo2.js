@@ -25,6 +25,6 @@ function calculateAge(str) {
 
 }
 
-// calculateAge("1989-10-15");
+calculateAge("1989-10-15");
 
-calculateAge(process.argv[2]);
+// calculateAge(process.argv[2]);
