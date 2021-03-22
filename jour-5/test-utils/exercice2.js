@@ -24,7 +24,7 @@ function addition (num) {
     var summ = 0;
     if (num) {
         for (var i = 1; i <= 10; i++) {
-            summ = summ + i;
+            summ = num + i;
             console.log("la somme de ", num, "et", i, "est: ", summ)
         }
     } else {

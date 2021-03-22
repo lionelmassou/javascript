@@ -1,5 +1,13 @@
 // CALCULATOR
 
+// il faut tjr rajouter le verificateur
+// if (process.argv.length ===5){
+
+// } else {
+// console.log("error")
+// }
+// }
+
 function calculate(num1, num2, parm) {
     if (isNaN(num1) || isNaN(num2) || parm === undefined) return "Mettez bien les 3 paramètres svp: 2 entiers et 1 opérateur"
     else if (parm === "+") return num1 + num2;

@@ -1,5 +1,15 @@
 // TABLE
 
+// il faut tjr rajouter le verificateur
+// if (process.argv.length ===3){
+
+// } else {
+// console.log("error")
+// }
+// }
+
+
+
 function multiply(num) {
 
     var table = 0;

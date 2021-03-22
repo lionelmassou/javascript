@@ -19,9 +19,10 @@ function formatDate(mydate) {
     //format jj/mm/aaaa
     console.log("la date est: ", thedate, "/", month, "/", year);
 }
-// formatDate("1989-10-15");
+formatDate("1989-10-15");
 // formatDate("1989-4-15");
 
+// formatDate(process.argv[2]);
 
 // autre option
 
