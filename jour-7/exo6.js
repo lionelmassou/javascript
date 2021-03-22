@@ -25,7 +25,7 @@ var cakes = [
         status: "available"
     },
 ]
-// NON VALABLE
+// FONCTIONNE MAIS NON VALABLE
 
 // var sales = cakes.filter(function(item) {
 //     if (item.flavor === "chocolate" && item.name){
@@ -34,7 +34,22 @@ var cakes = [
 // });
 // console.log(sales);
 
-// options.filter(opt => !opt.assigned).map(opt => someNewObject)
+// DOC EN LIGNE //options.filter(opt => !opt.assigned).map(opt => someNewObject)
 
-var sales = cakes.filter(item => item.flavor === "chocolate").map(item:  => item.status="sold out !", )
-console.log(sales);
+// var sales = cakes.filter(item => item.flavor === "chocolate").map(item =>{
+//     sales[item.status] = "sold out !";
+//     console.log(sales);
+//     return sales;
+    
+// })
+
+var sales1 = cakes.filter(item => item.flavor === "chocolate").map(item => item.status = "sold out !")
+console.log("essai numéro 1: ",sales1);
+
+
+var sales2 = cakes.filter(item => item.flavor === "chocolate").map(item =>{
+    var container ={};
+    container.status = "sold out !";
+    return container;
+});
+console.log("essai numéro 2: ", sales2);
