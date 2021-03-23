@@ -4,10 +4,14 @@
 var array = [1, "toto", 34, "javascript", 8, true, NaN, -1];
 
 var numbers = array.filter(function (parm) {
-    
+
     if (typeof parm === "number") {
-        return parm 
+        return parm
     }
+
+    // fonctionne pas pour NaN 
+    // return isNaN(parm) === false;
+
 });
 
 console.log(numbers);
