@@ -13,14 +13,20 @@ request.get("https://pokeapi.co/api/v2/pokemon/", function (err, res, body) {
     var tabPokemon = allPokemon.results;
     // console.log("tabPokemon: ", tabPokemon);
 
-    var eachPokemon = tabPokemon.map((elem) =>elem.name);
-    // console.log("eachPokemon: ", eachPokemon);
+    var eachPokemon = tabPokemon.map((elem) => elem.name);
+    console.log("eachPokemon: ", eachPokemon);
 
-    var id
+    // var catchPokemon = eachPokemon.filter(num => eachPokemon[0].num); 
 
+    function catchPokemon(num) {
+        var elem = process.argv[2];
+
+        if (elem <= eachPokemon.length && elem != 0) {
+            console.log(eachPokemon[elem-1]);
+        } else {
+            console.log("Error... Choose a value between: " + 1 + " and " + (eachPokemon.length));
+        }
+    }
+    catchPokemon("the name of the pokemon is: ", process.argv[2]);
+    // catchPokemon (6);
 })
-
-
-// var onlyCountries = countriesNames.map((elem) => elem.name);
-//     console.log(typeof onlyCountries);
-//     console.log(onlyCountries.join("-"));

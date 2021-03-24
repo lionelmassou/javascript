@@ -13,8 +13,8 @@ request.get("https://restcountries.eu/rest/v1/all", function (err, res, body) {
     // console.log("country: ", countriesNames.length)
 
     var getCountries = countriesNames.map((elem) => elem.name);
-    // console.log(typeof onlyCountries);
+    console.log(typeof getCountries);
     console.log("3");
-    console.log(getCountries.join("-"));
+    // console.log(getCountries.join("-"));
     console.log("4");
 })
