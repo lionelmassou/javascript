@@ -2,6 +2,8 @@
 
 var request = require("request");
 
+function getCountries() {
+
 var countriesNames = [];
 console.log("1");
 request.get("https://restcountries.eu/rest/v1/all", function (err, res, body) {
@@ -12,9 +14,12 @@ request.get("https://restcountries.eu/rest/v1/all", function (err, res, body) {
 
     // console.log("country: ", countriesNames.length)
 
-    var getCountries = countriesNames.map((elem) => elem.name);
-    console.log(typeof getCountries);
+    var allCountries = countriesNames.map((elem) => elem.name);
+    console.log(typeof allCountries);
     console.log("3");
-    // console.log(getCountries.join("-"));
+    console.log(allCountries.join(" - "));
     console.log("4");
 })
+}
+
+getCountries()
