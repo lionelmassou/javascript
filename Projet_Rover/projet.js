@@ -2,6 +2,7 @@
 
 var prompt = require("prompt");
 
+
 var grille = [
     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -32,25 +33,25 @@ function turnLeft(rover) {
     if (rover.direction === "N") {
 
         rover.direction = "W"
-        console.log("je suis tourné vers l'ouest");
+        console.log(rover + "Tourné vers l'ouest")
     }
 
     else if (rover.direction === "W") {
 
         rover.direction = "S"
-        console.log("je suis tourné vers le sud");
+        console.log(rover + "Tourné vers le sud")
     }
 
     else if (rover.direction === "S") {
 
         rover.direction = "E"
-        console.log("je suis tourné vers l'est");
+        console.log(rover + "Tourné vers l'est")
     }
 
     else if (rover.direction === "E") {
 
         rover.direction = "N"
-        console.log("je suis tourné vers le nord");
+        console.log(rover + "Tourné vers le nord")
     }
 }
 
@@ -59,27 +60,27 @@ function turnRight(rover) {
     if (rover.direction === "N") {
 
         rover.direction = "E"
-        console.log("je suis tourné vers l'est");
+        console.log(rover + "Tourné vers l'est")
     }
-
     else if (rover.direction === "E") {
 
         rover.direction = "S"
-        console.log("je suis tourné vers le sud");
+        console.log(rover + "Tourné vers le sud")
     }
 
     else if (rover.direction === "S") {
 
         rover.direction = "W"
-        console.log("je suis tourné vers l'ouest");
+        console.log(rover + "Tourné vers l'ouest")
     }
 
     else if (rover.direction === "W") {
 
         rover.direction = "N"
-        console.log("je suis tourné vers le nord");
+        console.log(rover + "Tourné vers le nord")
     }
 }
+
 
 // FAISONS AVANCER LE ROVER
 
@@ -88,25 +89,25 @@ function moveFoward(rover) {
     if (rover.direction === "N") {
 
         rover.x++
-        console.log("j'avance vers le nord");
+        console.log(rover + "Avance vers le nord")
     }
 
     else if (rover.direction === "E") {
 
         rover.y++
-        console.log("j'avance vers l'est");
+        console.log(rover + "Avance vers l'est")
     }
 
     else if (rover.direction === "S") {
 
         rover.x++
-        console.log("j'avance vers le sud");
+        console.log(rover + "Avance vers le sud")
     }
 
     else if (rover.direction === "W") {
 
         rover.y++
-        console.log("j'avance vers l'ouest");
+        console.log(rover + "Avance vers l'ouest'")
     }
 }
 
@@ -127,36 +128,34 @@ function pilotRover(string) {
         }
         else if (string[i] === "f") {
 
-            moveFoward(rover);
-            rover.travelog.push([rover.x, rover.y]);
-            console.log(rover.travelog);
-    
+            moveFoward(rover)
+            rover.travelog.push([rover.x, rover.y])
+            console.log(rover.travelog)
+
+
         }
+
         else {
-            console.log("error");
+            console.log("Wrong letter")
         }
     }
 }
 
-pilotRover("fflrrffl");
-
-
-
-
-rover.travelog = (rover.x, rover.y) 
 
 
 function displayPrompt() {
-    prompt.get({ pilotRover: "Pilot Rover", description: "Entrez une direction avec les lettres l,f,r" },
+    prompt.get(["pilot"],
 
         function (err, res) {
             if (err) {
                 return onErr(err);
             }
             else {
-                (res.pilotRover)
+                console.log(res.pilot)
+                pilotRover(res.pilot)
             }
 
         })
 }
 displayPrompt()
+
