@@ -1,4 +1,5 @@
 //PROJET ROVER
+
 var prompt = require("prompt");
 
 
@@ -15,6 +16,8 @@ var grille = [
     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
 ];
 
+// POSITION ROVER DE DEPART
+
 var rover = {
     direction: "N",
     x: 0,
@@ -22,32 +25,37 @@ var rover = {
     travelog: [],
 };
 
-// DETERMINER LES DIRECTIONS
+// console.log(grille.join('\n') + '\n\n');
+// grille[rover.x][rover.y] = rover.direction;
+// console.log(grille.join('\n'));
+
+
+// DETERMINER LES DIRECTIONS VERS LA GAUCHE/ VERS LA DROITE
 
 function turnLeft(rover) {
 
     if (rover.direction === "N") {
 
-        rover.direction = "W"
-        console.log(rover + "Tourné vers l'ouest")
+        rover.direction = "W";
+        console.log("rover a " + "Tourné vers l'ouest");
     }
 
     else if (rover.direction === "W") {
 
-        rover.direction = "S"
-        console.log(rover + "Tourné vers le sud")
+        rover.direction = "S";
+        console.log("rover a " + "Tourné vers le sud");
     }
 
     else if (rover.direction === "S") {
 
-        rover.direction = "E"
-        console.log(rover + "Tourné vers l'est")
+        rover.direction = "E";
+        console.log("rover a " + "Tourné vers l'est");
     }
 
     else if (rover.direction === "E") {
 
-        rover.direction = "N"
-        console.log(rover + "Tourné vers le nord")
+        rover.direction = "N";
+        console.log("rover a " + "Tourné vers le nord");
     }
 }
 
@@ -55,25 +63,25 @@ function turnRight(rover) {
 
     if (rover.direction === "N") {
 
-        rover.direction = "E"
-        console.log(rover + "Tourné vers l'est")
+        rover.direction = "E";
+        console.log("rover a " + "Tourné vers l'est");
     }
     else if (rover.direction === "E") {
 
-        rover.direction = "S"
-        console.log(rover + "Tourné vers le sud")
+        rover.direction = "S";
+        console.log("rover a " + "Tourné vers le sud");
     }
 
     else if (rover.direction === "S") {
 
-        rover.direction = "W"
-        console.log(rover + "Tourné vers l'ouest")
+        rover.direction = "W";
+        console.log("rover a " + "Tourné vers l'ouest");
     }
 
     else if (rover.direction === "W") {
 
-        rover.direction = "N"
-        console.log(rover + "Tourné vers le nord")
+        rover.direction = "N";
+        console.log("rover a " + "Tourné vers le nord");
     }
 }
 
@@ -82,70 +90,95 @@ function turnRight(rover) {
 
 function moveFoward(rover) {
 
-    if ((rover.x < 0 || rover.x > 10) || (rover.y < 0 || rover.y > 10)) {
-        console.log("Vous partez hors-limit,entré une autre direction")
+    // DEFINIR LES LIMITES AU ROVER
 
-    } else {
+    if ((rover.x < 0 || rover.x > 10) || (rover.y < 0 || rover.y > 10)) {
+
+        console.log("OFF LIMITE, Nous n'allons pas effectuer le déplacement");
+
+    }
+    else {
+
         if (rover.direction === "N") {
 
-            rover.x--
-            console.log(rover + "Avance vers le nord")
+            rover.x--;
+            // rover.x++;
+            console.log("rover a " + "Avancé vers le nord");
         }
 
         else if (rover.direction === "E") {
 
-            rover.y++
-            console.log(rover + "Avance vers l'est")
+            rover.y++;
+            // rover.y++;
+            console.log("rover a " + "Avancé vers l'est");
         }
 
         else if (rover.direction === "S") {
 
-            rover.x++
-            console.log(rover + "Avance vers le sud")
+            rover.x++;
+            // rover.x++;
+            console.log("rover a " + "Avancé vers le sud");
         }
 
         else if (rover.direction === "W") {
 
-            rover.y--
-            console.log(rover + "Avance vers l'ouest")
+            rover.y--;
+            // rover.y++;
+            console.log("rover a " + "Avancé vers l'ouest'");
         }
+
     }
 }
+
+// FAISONS RECULER LE ROVER
 
 function moveBackward(rover) {
 
-    if ((rover.x < 0 || rover.x > 10) || (rover.y < 0 || rover.y > 10)) {
-        console.log("Vous partez hors-limit,entré une autre direction")
+    // DEFINIR LES LIMITES AU ROVER
+    // (x > 10 ou x < 0) ou (y > 10 ou y< 0)
+    if ((rover.x <= 0 || rover.x > 10) || (rover.y < 0 || rover.y > 10)) {
 
-    } else {
+        console.log("OFF LIMITE, Nous n'allons pas effectuer le déplacement");
+
+    }
+    else {
         if (rover.direction === "N") {
 
-            rover.x++
-            console.log(rover + "Recule vers le sud")
+            rover.x++;
+            // rover.x--;
+            console.log("rover a " + "Reculé vers le sud");
         }
 
         else if (rover.direction === "E") {
 
-            rover.y--
-            console.log(rover + "Recule vers l'ouest")
+            rover.y--;
+            // rover.y--;
+            console.log("rover a " + "Reculé vers l'ouest");
         }
 
         else if (rover.direction === "S") {
 
-            rover.x--
-            console.log(rover + "Recule vers le nord")
+            rover.x--;
+            // rover.x--;
+            console.log("rover a " + "Reculé vers le nord");
         }
 
         else if (rover.direction === "W") {
 
-            rover.y++
-            console.log(rover + "Recule vers l'est")
+            rover.y++;
+            // rover.y--;
+            console.log("rover a " + "Recule vers l'est");
         }
     }
 }
 
-// OUTIL DE COMMANDE
+// OUTIL DE COMMANDE ET AFFICHAGE DE GRILLE
+
 function pilotRover(string) {
+
+    // console.log(grille.join('\n') + '\n\n');
+    // grille[rover.x][rover.y] = rover.direction;
+    // console.log(grille.join('\n'));
 
 
     for (let i = 0; i < string.length; i++) {
@@ -177,7 +210,7 @@ function pilotRover(string) {
 
             moveFoward(rover);
             // nouvelle valeur de position
-            rover.travelog.push([rover.x, rover.y]);
+            rover.travelog.push([rover.x,rover.y]);
             console.log(rover.travelog);
 
             // nouvelle position
@@ -193,7 +226,7 @@ function pilotRover(string) {
 
             moveBackward(rover);
 
-            rover.travelog.push([rover.x, rover.y]);
+            rover.travelog.push([rover.x,rover.y]);
             console.log(rover.travelog);
 
             // grille[rover.y][rover.x] = rover.direction;
@@ -210,13 +243,12 @@ function pilotRover(string) {
             // grille[rover.y][rover.x] = rover.direction;
             grille[rover.x][rover.y] = rover.direction;
             console.log(grille.join('\n'));
-
             return
         }
-
     }
 }
 
+// UTILISATION DU PROMPT POUR SOLLICITER L'UTILISATEUR
 
 function displayPrompt() {
     prompt.get(["pilot"],
@@ -228,10 +260,10 @@ function displayPrompt() {
             else {
                 console.log(res.pilot)
                 pilotRover(res.pilot)
-                // displayPrompt()
             }
 
         })
 }
-
 displayPrompt()
+
+
