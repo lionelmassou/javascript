@@ -82,30 +82,30 @@ function turnRight(rover) {
 
 function moveFoward(rover) {
 
-    if ((rover.x < 0 || rover.x > 10) || (rover.y < 0 || rover.y > 10)) {
+    if ((rover.x < 0 || rover.x > 10) && (rover.y < 0 || rover.y > 10)) {
         console.log("Vous partez hors-limit,entré une autre direction")
 
     } else {
         if (rover.direction === "N") {
-
+            // rover.y--;
             rover.x--
             console.log(rover + "Avance vers le nord")
         }
 
         else if (rover.direction === "E") {
-
+            // rover.x++;
             rover.y++
             console.log(rover + "Avance vers l'est")
         }
 
         else if (rover.direction === "S") {
-
+            // rover.y++;
             rover.x++
             console.log(rover + "Avance vers le sud")
         }
 
         else if (rover.direction === "W") {
-
+            // rover.x--;
             rover.y--
             console.log(rover + "Avance vers l'ouest")
         }
@@ -120,24 +120,25 @@ function moveBackward(rover) {
     } else {
         if (rover.direction === "N") {
 
+            // rover.y++;
             rover.x++
             console.log(rover + "Recule vers le sud")
         }
 
         else if (rover.direction === "E") {
-
+            // rover.x--;
             rover.y--
             console.log(rover + "Recule vers l'ouest")
         }
 
         else if (rover.direction === "S") {
-
+            // rover.y--;
             rover.x--
             console.log(rover + "Recule vers le nord")
         }
 
         else if (rover.direction === "W") {
-
+            // rover.x++;
             rover.y++
             console.log(rover + "Recule vers l'est")
         }
@@ -228,6 +229,7 @@ function displayPrompt() {
             else {
                 console.log(res.pilot)
                 pilotRover(res.pilot)
+                
                 // displayPrompt()
             }
 
